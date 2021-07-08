@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { QuillModule } from 'ngx-quill';
 
@@ -11,13 +12,13 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     QuillModule.forRoot({
       modules: {
-        syntax: true,
+        syntax: false,
         toolbar: [
           ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
           ['blockquote', 'code-block'],
-          ['formula'],
           [{ 'list': 'ordered'}, { 'list': 'bullet' }],
           ['code-block'],
         
@@ -35,7 +36,9 @@ import { AppComponent } from './app.component';
           [{ 'align': [] }],
         
           ['clean'],                                         // remove formatting button
-          ['link', 'image', 'video']                         // link and image, video
+          ['link', 'image', 'video'],                         // link and image, video
+        
+          ['formula']
         ]
       }
     }),
