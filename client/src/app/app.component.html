@@ -1,9 +1,15 @@
 <div class="container">
   <div class="row" style="margin-top: 20%;">
     <div class="col-8 mx-auto">
-      <quill-editor></quill-editor>
+      <quill-editor [ngModel]="value" (ngModelChange)="onChange($event)"></quill-editor>
+      <button (click) = "saved()" class="btn btn-primary mt-2">save script </button>
     </div>
   </div>
 </div>
+
+
+
+
+
 
 
